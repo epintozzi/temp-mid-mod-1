@@ -13,7 +13,6 @@ class Api::V1::LinksController < ApplicationController
       render json: @link
 
     else
-      # binding.pry
       render json: @link.errors.full_messages, status: 500
     end
   end
@@ -23,6 +22,7 @@ class Api::V1::LinksController < ApplicationController
     # @link.assign_attributes(link_params)
     # just_read = @link.read_changed? && @link.read
     if @link.update_attributes(link_params)
+      BunnyService.new.send_link(@link.url)
       # Read.create(link: @link) if just_read
       # head :no_content
       render json: @link

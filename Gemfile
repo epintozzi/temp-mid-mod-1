@@ -20,6 +20,7 @@ gem 'react-rails'
 gem 'sprockets-es6'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "validate_url"
+gem "bunny", ">= 2.6.3"
 
 
 # gem 'unicorn'
