@@ -17,6 +17,7 @@
       <% if !link.read %>
         <%= link_to "Mark as read", api_v1_link_path(link), class: "mark-read" %>
       <% end %>
+      <%= link_to "Edit", edit_link_path(link) %>
     </div>
   </br>
   <% end %>
