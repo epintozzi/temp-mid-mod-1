@@ -10,7 +10,7 @@ $(document).ready(function(){
 function createLink (event){
   event.preventDefault();
 
-  console.log("win")
+  // console.log("win")
 
   var link = getLinkData();
 
