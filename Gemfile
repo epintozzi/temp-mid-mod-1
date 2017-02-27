@@ -17,6 +17,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'better_errors', group: :development
 gem 'react-rails'
 gem 'sprockets-es6'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # gem 'unicorn'
 
