@@ -18,7 +18,7 @@ class LinksController < ApplicationController
       flash[:success] = "Your link has been updated"
       redirect_to root_path
     else
-      flash[:alert] = ""
+      flash[:alert] = "There was a problem. #{@link.errors.full_messages.join(' ')}. Please try again."
       render :edit
     end
   end
