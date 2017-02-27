@@ -15,7 +15,7 @@ function markRead(e){
     url: '/api/v1/links/' + linkId,
     data: {read: true},
   }).then(updateLinkStatus)
-    // .then(displayFailure);
+    .fail(displayFailure);
 }
 
 function updateLinkStatus(link) {
