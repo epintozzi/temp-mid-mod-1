@@ -13,7 +13,7 @@ scenario "Mark a link as read" do
     end
 
     click_on "Mark as read"
-save_and_open_page
+
     within('.link .read-status') do
       expect(page).to have_text("true")
     end
