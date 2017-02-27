@@ -14,6 +14,18 @@ describe "user sign up" do
     expect(page).to have_content("Logout")
     expect(page).to have_content("You have successfully created an account")
   end
+  scenario "user is redirected to root after successful creation of an account" do
+    visit root_path
+    click_on "Sign Up"
+
+    expect(current_path).to eq("/signup")
+    fill_in "user[email]", with: "erin@email.com"
+    fill_in "user[password]", with: "password1"
+    fill_in "user[password_confirmation]", with: "password1"
+    click_on "Submit"
+
+    expect(current_path).to eq(root_path)
+  end
   scenario "user cannot create an account with email address that is already in use" do
     User.create(email: "erin@email.com", password: "password", password_confirmation: "password")
     visit root_path
