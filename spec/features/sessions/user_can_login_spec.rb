@@ -19,4 +19,8 @@ describe "login" do
 
     expect(page).to have_content("There was a problem logging in. Please try again.")
   end
+  scenario "unauthenticated user is redirected to login page when they visit index" do
+    visit root_path
+    expect(current_path).to eq(login_path)
+  end
 end
