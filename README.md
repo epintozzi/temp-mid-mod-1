@@ -12,7 +12,9 @@ The app has phantom.js, a headless webdriver installed for JS testing.
 
 #### Setup
 
+
 To set it up you will just need to run `npm install phantomjs -g`. Everything else will be installed with Bundle.
+
 
 #### Use
 
