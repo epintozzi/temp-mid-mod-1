@@ -10,7 +10,18 @@ $(document).ready(function(){
 });
 
 function updateHotLinks(links){
-  console.log(links);
+  var topLink = true;
+  $(links).each(function(){
+    var url = this[0];
+    $("a[href='" + url + "']").each(function() {
+      if (topLink){
+        $(this).parent().prepend("<p class='top-tag'> top link </p>");
+      } else {
+        $(this).parent().prepend("<p class='hot-tag'> hot </p>");
+      }
+    });
+    topLink = false;
+  });
 }
 
 function displayFailure(failureData){
