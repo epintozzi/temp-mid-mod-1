@@ -13,6 +13,7 @@ This app uses ruby version 2.3.1 and Rails 5.0.0.1
 
 ### Testing
 
+
 - Testing is done with Rspec, capybara, and phantomjs
 
 To set it up you will just need to run `npm install phantomjs -g`. Everything else will be installed with Bundle.
