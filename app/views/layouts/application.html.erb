@@ -2,6 +2,15 @@
 <html>
 <head>
   <title>URLockBox</title>
+  <% if Rails.env.prod? %>
+    <script type="text/javascript">
+      window.HOT_LINKS_HOST = "https://murmuring-lake-24503.herokuapp.com/"
+    </script>
+  <% else %>
+    <script type="text/javascript">
+      window.HOT_LINKS_HOST = "http://localhost:3001"
+    </script>
+  <% end %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>

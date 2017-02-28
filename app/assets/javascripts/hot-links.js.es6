@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   $.ajax({
     type: 'GET',
-    url: 'https://murmuring-lake-24503.herokuapp.com/',
+    url: window.HOT_LINKS_HOST,
     headers: { Accept: "application/json", "Content-Type": "application/json" }
   }).then(updateHotLinks)
     .fail(displayFailure);
