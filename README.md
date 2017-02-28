@@ -1,27 +1,23 @@
 # URLockBox
 
-## MidModule Assessment
+URLockBox is an app for storing links to read for later.
 
-The URLockbox is a starter app for the mid-module assessment for backend engineering module4 at TuringSchool of Software and Design.
+## Setup
 
-Be sure to get familiar with what is already done, and what is not. No features are complete, but there is some set up done for several features. Use commit history if that helps.
+This app uses ruby version 2.3.1 and Rails 5.0.0.1
 
-### Testing with PhantomJS using poltergeist
+### Installation
 
-The app has phantom.js, a headless webdriver installed for JS testing.
+ - clone down this repo `git clone git@github.com:epintozzi/temp-mid-mod-1.git`
+ - run `bundle install`
 
-#### Setup
+### Testing
 
+
+- Testing is done with Rspec, capybara, and phantomjs
 
 To set it up you will just need to run `npm install phantomjs -g`. Everything else will be installed with Bundle.
 
+## Using the app
 
-#### Use
-
-You can then write capybara feature tests and add `js: true` tag to each test the has JavaScript.  Your tests will execute and recognize your JavaScript.
-
-If you're having problems troubleshooting asynchronous actions (like DOM changes after an AJAX request), [peruse this section of Capybara's docs](https://github.com/teamcapybara/capybara#asynchronous-javascript-ajax-and-friends)
-
-#### Your JavaScript
-
-The major __GOTCHA__ here is that phantomjs doesn't recognize es6. So if you write es6 you will need to make your file extenstion `.js.es6`. You should see an example test in the `spec/features` directory.
+To use the app, create an account via the login link. Once you have an account you can start storing link by using the form on the index page. Add a valid URL and a title, and all your links will appear on a list below the form. They can be filtered by test or by read/unread status.

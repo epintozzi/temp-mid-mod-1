@@ -9,15 +9,15 @@ $(document).ready(function(){
 
 function createLink (event){
   event.preventDefault();
-
-  // console.log("win")
-
   var link = getLinkData();
 
-  $.post("/api/v1/links", link)
-   .then( renderLink )
-   .fail( displayFailure )
- }
+ $.ajax({
+   type: 'POST',
+   url: '/api/v1/links',
+   data: link,
+ }).then(renderLink)
+   .fail(displayFailure)
+}
 
 function getLinkData() {
  return {
@@ -27,24 +27,25 @@ function getLinkData() {
 }
 
 function renderLink(link){
-  $("#links-list").append( linkHTML(link) )
+  $("#links-list").prepend( linkHTML(link) )
   clearLink();
 }
 
 function linkHTML(link) {
 
-    return `<div class='link' data-id='${link.id}' id="link-${link.id}">
-              <p class='link-title'>${ link.title }</p>
-              <p class='link-url'>${ link.url }</p>
+    return `<div class='link link-read-${link.read} col-md-2' data-link-id='${link.id}' id="link-${link.id}">
+              <h5 class='link-title'>${ link.title }</h5>
+              <a href='${ link.url }' class='link-url'>${ link.url }</a>
 
-              <p class="link_read">
-                ${ link.read }
+              <p class="link_read read-status">
+                Read Status: ${ link.read }
               </p>
-              <p class="link_buttons">
-                <button class="mark-read">Mark as Read</button>
-                <button class='edit-link'>Edit</button>
-                <button class='delete-link'>Delete</button>
-              </p>
+              <a href='/api/v1/links/${link.id}' class="mark-read">
+                Mark as Read</a>
+              <a href='/api/v1/links/${link.id}' style='display:none' class="mark-unread">
+                Mark as Unread</a>
+              <a href='/links/${link.id}/edit' class=''>Edit
+              </a>
             </div>`
 }
 
