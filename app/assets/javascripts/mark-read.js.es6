@@ -34,13 +34,18 @@ function markUnread(e){
 }
 
 function updateLinkStatus(link) {
-  if(link.read == false){
-    $(`.link[data-link-id=${link.id}]`).find(".read-status").text("Read Status: " + link.read);
+  $(`.link[data-link-id=${link.id}]`).find(".read-status").text("Read Status: " + link.read);
+  if(link.read){
+    // run when read
     $(`.link[data-link-id=${link.id}]`).find("a.mark-read").hide();
+    $(`.link[data-link-id=${link.id}]`).addClass("link-read-true");
+    $(`.link[data-link-id=${link.id}]`).removeClass("link-read-false");
     $(`.link[data-link-id=${link.id}]`).find("a.mark-unread").show();
   } else {
-    $(`.link[data-link-id=${link.id}]`).find(".read-status").text("Read Status: " + link.read);
+    //run when unread
     $(`.link[data-link-id=${link.id}]`).find("a.mark-unread").hide();
+    $(`.link[data-link-id=${link.id}]`).addClass("link-read-false");
+    $(`.link[data-link-id=${link.id}]`).removeClass("link-read-true");
     $(`.link[data-link-id=${link.id}]`).find("a.mark-read").show();
   }
 }

@@ -14,8 +14,10 @@
     <label>By text:
       <input id="filter-input">
     </label>
-    <button type="button" name="all-read">Only Read Links</button>
-    <button type="button" name="all-unread">Only Unread Links</button>
+    <div class="filter_buttons">
+      <button type="button" name="all-read">Only Read Links</button>
+      <button type="button" name="all-unread">Only Unread Links</button>
+    </div>
   </div>
 
   <div id="links-list">
@@ -25,11 +27,11 @@
         <h5><%= link.title %></h5>
         <%= link_to link.url, link.url%>
         <p class="read-status">Read Status: <%= link.read%></p>
-        <% if !link.read %>
-          <%= link_to "Mark as read", api_v1_link_path(link), class: "mark-read" %>
-        <% elsif link.read %>
-          <%= link_to "Mark as unread", api_v1_link_path(link), class: "mark-unread" %>
-        <% end %>
+
+        <%= link_to "Mark as read", api_v1_link_path(link), class: "mark-read", style: (link.read ? 'display: none' : '') %>
+
+        <%= link_to "Mark as unread", api_v1_link_path(link), class: "mark-unread", style: (link.read ? '' : 'display: none') %>
+
         <%= link_to "Edit", edit_link_path(link) %>
       </div>
     <% end %>
