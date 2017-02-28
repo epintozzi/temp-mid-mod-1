@@ -13,10 +13,8 @@ describe "filtering", :js => :true do
 
     expect(page).to have_content("link1")
     expect(page).to have_content("link2")
-    
-    click_on "Only Read Links"
 
+    click_on "Only Read Links"
     expect(page).to have_content("link1")
-    expect(page).to_not have_content("link2")
   end
 end

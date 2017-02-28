@@ -25,7 +25,7 @@
 
       <div class="link link-read-<%= link.read %> col-md-2" data-link-id="<%= link.id %>">
         <h5><%= link.title %></h5>
-        <%= link_to link.url, link.url%>
+        <%= link_to link.url, link.url, class: "url-link" %>
         <p class="read-status">Read Status: <%= link.read%></p>
 
         <%= link_to "Mark as read", api_v1_link_path(link), class: "mark-read", style: (link.read ? 'display: none' : '') %>

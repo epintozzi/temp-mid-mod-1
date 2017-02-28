@@ -33,7 +33,7 @@ function renderLink(link){
 
 function linkHTML(link) {
 
-    return `<div class='link' data-link-id='${link.id}' id="link-${link.id}">
+    return `<div class='link link-read-${link.read} col-md-2' data-link-id='${link.id}' id="link-${link.id}">
               <h5 class='link-title'>${ link.title }</h5>
               <a href='${ link.url }' class='link-url'>${ link.url }</a>
 
@@ -42,6 +42,8 @@ function linkHTML(link) {
               </p>
               <a href='/api/v1/links/${link.id}' class="mark-read">
                 Mark as Read</a>
+              <a href='/api/v1/links/${link.id}' style='display:none' class="mark-unread">
+                Mark as Unread</a>
               <a href='/links/${link.id}/edit' class=''>Edit
               </a>
             </div>`
