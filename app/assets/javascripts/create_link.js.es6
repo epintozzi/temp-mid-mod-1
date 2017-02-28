@@ -9,15 +9,7 @@ $(document).ready(function(){
 
 function createLink (event){
   event.preventDefault();
-
-  // console.log("win")
-
   var link = getLinkData();
-
- //  $.post("/api/v1/links", link)
- //   .then( renderLink )
- //   .fail( displayFailure )
- // }
 
  $.ajax({
    type: 'POST',

@@ -14,3 +14,15 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .link-read-true {
+   background-color: #E6E6E6;
+ }
+
+ .link-read-true, .link-read-false {
+   padding-top: 15px;
+   padding-bottom: 15px;
+   border: 1px solid gray;
+   margin: 5px;
+   border-radius: 2px;
+ }
